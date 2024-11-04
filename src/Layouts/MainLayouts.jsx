@@ -7,7 +7,7 @@ import Banner from "../components/Banner";
 const MainLayouts = () => {
     return (
         <div>
-           <div className="bg-[#9538E2] h-[500px] w-11/12 lg:w-11/12 mx-auto rounded-md ">
+           <div className="bg-[#9538E2] h-[500px] w-11/12 lg:w-11/12 mx-auto rounded-md mb-60">
             <Navbar></Navbar>
             <Banner></Banner>
            </div>

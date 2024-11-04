@@ -10,15 +10,32 @@ import {
 import MainLayouts from './Layouts/MainLayouts';
 import Statistics from './pages/Statistics';
 import Dashboard from './pages/Dashboard';
+import GadgetCards from './components/GadgetCards';
+import ErrorPage from './components/ErrorPage';
+
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayouts></MainLayouts>,
+    errorElement:<ErrorPage></ErrorPage>,
     children:[
       {
         path:"/",
-        element:<Home></Home>
+        element:<Home></Home>,
+        loader:()=> fetch("../category.json"),
+        children:[
+          {
+            path:"/",
+            element:<GadgetCards></GadgetCards>,
+            loader:()=> fetch("../gadgets.json")
+          },
+          {
+            path:"/gadgets/:category",
+            element:<GadgetCards></GadgetCards>,
+            loader:()=> fetch("../gadgets.json")
+          }
+        ]
       },
       {
         path:"/statistics",
