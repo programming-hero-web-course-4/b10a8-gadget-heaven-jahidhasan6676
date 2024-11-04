@@ -2,7 +2,7 @@
 
 const Footer = () => {
     return (
-        <div className="w-full bg-white py-8">
+        <div className="w-full bg-white py-8 mt-12">
             {/* title part */}
             <div className="text-center">
                 <h3 className="text-xl font-bold">Gadget Heaven</h3>
